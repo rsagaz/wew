@@ -51,7 +51,7 @@ $app->post('/', function ($request, $response)
 		
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'alo','halo','helo')
+		if(strtolower($userMessage) == 'alo')
 			
 		{
 			
@@ -62,8 +62,75 @@ $app->post('/', function ($request, $response)
 		
 		}
 	}
+{
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == 'Tips Fashion')
+			
+		{
+			
+			$message = "<?php
+$json = '{
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "SPECIFY_YOUR_IMAGE_URL",
+        "title": "Title",
+        "text": "Text",
+        "actions": [
+          {
+            "type": "message",
+            "label": "Action 1",
+            "text": "Action 1"
+          },
+          {
+            "type": "message",
+            "label": "Action 2",
+            "text": "Action 2"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "SPECIFY_YOUR_IMAGE_URL",
+        "title": "Title",
+        "text": "Text",
+        "actions": [
+          {
+            "type": "message",
+            "label": "Action 1",
+            "text": "Action 1"
+          },
+          {
+            "type": "message",
+            "label": "Action 2",
+            "text": "Action 2"
+          }
+        ]
+      }
+    ]
+  }
+}';
+$result = json_decode ($json);
+?>
+";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		
+		}
+	}
 
 
+	
+	
+	
+	
+	
+	
+	
 });
 
 // $app->get('/push/{to}/{message}', function ($request, $response, $args)
