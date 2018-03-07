@@ -110,7 +110,7 @@ $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama
 $result = $bot->replyMessage($event['replyToken'], $templateMessage);
 return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 }
-	
+}	
 	
 });
 
