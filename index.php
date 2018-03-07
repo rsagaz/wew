@@ -46,9 +46,11 @@ $app->post('/', function ($request, $response)
 	foreach ($data['events'] as $event)
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'halo')
+		if(strtolower($userMessage) == 'alo')
+			
 		{
-			$message = "Halo juga";
+			$message = "Halo Selamat DiBonul Chanel";
+			$message = "Silahkan Pilih Pada Bagian Menu kk";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
