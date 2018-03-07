@@ -115,7 +115,7 @@ $confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\Confi
    "Hai Apakah Kamu Ganteng?",
    [
    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"Yoi"),
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak',"Biasa Aja"),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','Biasa Aja'),
    ]
    );
 $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $confirmTemplateBuilder);
