@@ -61,7 +61,7 @@ $app->post('/', function ($request, $response)
 		
 	}
 
-{
+
 		if($userMessage == "Tips Fashion"){
 $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
   new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Niko Chong", "Fashion Designer","https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",[
@@ -79,14 +79,14 @@ return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		
 	}
-	{
+	
 	
 		if($userMessage == "Hai"){
 $confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
    "Hai Apakah Kamu Ganteng?",
    [
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"/ya"),
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','/tidak'),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"Tumben Ngaku"),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','Sepertinya Bawaan Lahir'),
    ]
    );
 $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $confirmTemplateBuilder);
