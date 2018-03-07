@@ -56,15 +56,34 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			
+			$userMessage = $event['message']['text'];
+		}
+		
+		if(strtolower($userMessage) == 'Benar')
+			
+		{
+			
 			$message = "Sip Deh!";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			
+			}
+		
+		if(strtolower($userMessage) == 'Benar')
+			
+		{
 			$message = "Oke Deh!";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+			
+			}
+		
+		if(strtolower($userMessage) == 'Benar')
+			
+		{
 			
 			$message = "Sip!";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
