@@ -44,6 +44,7 @@ $app->post('/', function ($request, $response)
 	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)		
+	
 	{
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'alo')
@@ -62,8 +63,8 @@ $app->post('/', function ($request, $response)
 {	
 	if($userMessage == "hai",)
 	{
-$confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
-   "hai juga Apakah Kamu Ganteng ?",
+$confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder
+("hai juga Apakah Kamu Ganteng ?",
    [
    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"/ya"),
    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','/tidak'),
@@ -73,6 +74,8 @@ $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama
 $result = $bot->replyMessage($event['replyToken'], $templateMessage);
 return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 }
+	
+	
 {
 		if($userMessage == "Tips Fashion"){
 $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
