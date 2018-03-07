@@ -47,14 +47,31 @@ $app->post('/', function ($request, $response)
 	
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'alo')
+		if(strtolower($userMessage) == 'Benar')
 			
 		{
 			
-			$message = "Halo Silahkan Pilih Pada Bagian Menu kk";
+			$message = "Okay :D";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+			$message = "Sip Deh!";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+			$message = "Oke Deh!";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+			$message = "Sip!";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+			
 		
 		}
 		
