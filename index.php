@@ -95,7 +95,21 @@ $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama
 $result = $bot->replyMessage($event['replyToken'], $templateMessage);
 return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 }
-	}	
+	}
+	
+{
+	if($userMessage == "Wanita"){
+$ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
+  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",
+  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg")),
+  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",
+  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg")),
+  
+  ]);
+$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
+$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+}
 	
 	
 });
