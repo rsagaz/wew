@@ -47,16 +47,15 @@ $app->post('/', function ($request, $response)
 	
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == '*')
+		if(strtolower($userMessage) == 'Gila')
 			
 		{
 			
-			$message = "Maaf Aku Tidak Paham";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Maap Saya Tidak Mengerti');
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Maap Saya Tidak Paham');
+                $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+                return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			
-			$userMessage = $event['message']['text'];
 		}
 	
 		
