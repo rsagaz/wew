@@ -44,8 +44,6 @@ $app->post('/', function ($request, $response)
 	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)
-		{
-}	
 		
 	{
 		$userMessage = $event['message']['text'];
@@ -59,74 +57,11 @@ $app->post('/', function ($request, $response)
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		}
-	}
-{
-		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'Tips Fashion')
-			
-		{
-			
-			$message = "<?php
-$json = '{
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
-      {
-        "thumbnailImageUrl": "SPECIFY_YOUR_IMAGE_URL",
-        "title": "Title",
-        "text": "Text",
-        "actions": [
-          {
-            "type": "message",
-            "label": "Action 1",
-            "text": "Action 1"
-          },
-          {
-            "type": "message",
-            "label": "Action 2",
-            "text": "Action 2"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "SPECIFY_YOUR_IMAGE_URL",
-        "title": "Title",
-        "text": "Text",
-        "actions": [
-          {
-            "type": "message",
-            "label": "Action 1",
-            "text": "Action 1"
-          },
-          {
-            "type": "message",
-            "label": "Action 2",
-            "text": "Action 2"
-          }
-        ]
-      }
-    ]
-  }
-}';
-$result = json_decode ($json);
-?>
-";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
-		}
+		
 	}
 
 
-	
-	
-	
-	
-	
 	
 	
 });
