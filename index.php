@@ -51,10 +51,10 @@ $app->post('/', function ($request, $response)
 			
 		{
 			
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Maap Saya Tidak Mengerti');
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('Maap Saya Tidak Paham');
-                $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-                return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		  $message = "Maaf Saya Tidak Mengerti","Tolong Diulangi";
+                  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+                  $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+                  return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			
 		}
 	
