@@ -60,22 +60,7 @@ $app->post('/', function ($request, $response)
 		
 		
 	}
-{	
-	if($userMessage == "hai",)
-	{
-$confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder
-("hai juga Apakah Kamu Ganteng ?",
-   [
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"/ya"),
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','/tidak'),
-   ]
-   );
-$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $confirmTemplateBuilder);
-$result = $bot->replyMessage($event['replyToken'], $templateMessage);
-return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-}
-	
-	
+
 {
 		if($userMessage == "Tips Fashion"){
 $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
@@ -94,6 +79,7 @@ return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		
 	}
+	
 	
 	
 });
