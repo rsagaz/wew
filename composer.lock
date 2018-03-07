@@ -163,8 +163,8 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "name": "Bobien Martien",
+                    "email": "bobienfly@gmail.com"
                 }
             ],
             "description": "Pimple, a simple Dependency Injection Container",
