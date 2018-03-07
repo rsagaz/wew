@@ -39,7 +39,7 @@ $app->post('/', function ($request, $response)
 		return $response->withStatus(400, 'Invalid signature');
 	}
 
-	// init bot
+	// init bot linenya
 	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV['CHANNEL_ACCESS_TOKEN']);
 	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
 	$data = json_decode($body, true);
@@ -71,11 +71,6 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			
-			$message = "Bagaimana Sehat Hari ini?";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
 		}
 		
 		
@@ -91,8 +86,8 @@ $app->post('/', function ($request, $response)
 
 // 	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($args['message']);
 // 	$result = $bot->pushMessage($args['to'], $textMessageBuilder);
-
 // 	return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+//	Coding By Bobien Martien 
 // });
 
 /* JUST RUN IT */
