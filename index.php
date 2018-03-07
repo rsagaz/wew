@@ -61,26 +61,7 @@ $app->post('/', function ($request, $response)
 		
 		
 	}
-	
-	{
-		$userMessage = $event['message2']['text'];
-		if(strtolower($userMessage2) == 'Gila2')
-			
-		{
-			
-		  $message2 = "Maaf Saya Tidak Paham";
-                  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message2);
-                  $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-                  return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-			
-		}
-	
 		
-		
-	}
-	
-	
-	
 	
 	{
 		if($userMessage == "Tips Fashion"){
@@ -115,7 +96,7 @@ $confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\Confi
    "Hai Apakah Kamu Ganteng?",
    [
    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"Yoi"),
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','Biasa Aja'),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak',"Biasa Aja"),
    ]
    );
 $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $confirmTemplateBuilder);
