@@ -44,20 +44,25 @@ $app->post('/', function ($request, $response)
 	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)
+		{
+    "type": "text",
+    "text": "Hello,Selamat Datang DiBonul Chanel"
+}	
+		
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'alo')
+		if(strtolower($userMessage) == 'alo','halo','helo')
 			
 		{
-			$message = "Halo Selamat DiBonul Chanel";
-			$message = "Silahkan Pilih Pada Bagian Menu kk";
+			
+			$message = "Halo Silahkan Pilih Pada Bagian Menu kk";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		}
 	}
-	
+
 
 });
 
