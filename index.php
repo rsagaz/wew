@@ -79,7 +79,9 @@ return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		
 	}
-if($userMessage == "Hai"){
+	{
+	
+		if($userMessage == "Hai"){
 $confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
    "Hai Apakah Kamu Ganteng?",
    [
