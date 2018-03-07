@@ -46,7 +46,7 @@ $app->post('/', function ($request, $response)
 	foreach ($data['events'] as $event)		
 	{
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'alo','helo')
+		if(strtolower($userMessage) == 'alo')
 			
 		{
 			
@@ -60,10 +60,10 @@ $app->post('/', function ($request, $response)
 		
 	}
 {	
-	if($userMessage == "alo",'helo')
+	if($userMessage == "hai",)
 	{
 $confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
-   "Apakah Kamu Ganteng ?",
+   "hai juga Apakah Kamu Ganteng ?",
    [
    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"/ya"),
    new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','/tidak'),
