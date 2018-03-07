@@ -46,7 +46,7 @@ $app->post('/', function ($request, $response)
 	foreach ($data['events'] as $event)
 		{
     "type": "text",
-    "text": "Hello,Selamat Datang DiBonul Chanel"
+    "text": "Helo,Selamat Datang DiBonul Chanel"
 }	
 		
 	{
