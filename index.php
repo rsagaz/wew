@@ -51,7 +51,7 @@ $app->post('/', function ($request, $response)
 			
 		{
 			
-		  $message = "Maaf Saya Tidak Mengerti","Tolong Diulangi";
+		  $message = "Maaf Saya Tidak Mengerti";
                   $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
                   $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
                   return $result->getHTTPStatus() . ' ' . $result->getRawBody();
@@ -61,6 +61,26 @@ $app->post('/', function ($request, $response)
 		
 		
 	}
+	
+	{
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == 'Gila2')
+			
+		{
+			
+		  $message = "Maaf Saya Tidak Paham";
+                  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+                  $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+                  return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			
+		}
+	
+		
+		
+	}
+	
+	
+	
 	
 	{
 		if($userMessage == "Tips Fashion"){
