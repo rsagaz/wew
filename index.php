@@ -45,8 +45,6 @@ $app->post('/', function ($request, $response)
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)
 		{
-    "type": "text",
-    "text": "Helo,Selamat Datang DiBonul Chanel"
 }	
 		
 	{
