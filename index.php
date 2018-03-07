@@ -44,6 +44,19 @@ $app->post('/', function ($request, $response)
 	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)
+	{	
+	if($userMessage == "kamu"){
+$confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
+   "Apakah Kamu $user ?",
+   [
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"/ya"),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','/tidak'),
+   ]
+   );
+$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $confirmTemplateBuilder);
+$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+}
 		
 	{
 		$userMessage = $event['message']['text'];
