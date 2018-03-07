@@ -63,13 +63,13 @@ $app->post('/', function ($request, $response)
 	}
 	
 	{
-		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'Gila2')
+		$userMessage = $event['message2']['text'];
+		if(strtolower($userMessage2) == 'Gila2')
 			
 		{
 			
-		  $message = "Maaf Saya Tidak Paham";
-                  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+		  $message2 = "Maaf Saya Tidak Paham";
+                  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message2);
                   $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
                   return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			
