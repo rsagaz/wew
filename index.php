@@ -114,8 +114,8 @@ return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 $confirmTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder(
    "Hai Apakah Kamu Ganteng?",
    [
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"Tumben Ngaku"),
-   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','Sepertinya Bawaan Lahir'),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Ya',"Yoi"),
+   new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Tidak','Biasa Aja'),
    ]
    );
 $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $confirmTemplateBuilder);
