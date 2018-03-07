@@ -67,6 +67,7 @@ $app->post('/', function ($request, $response)
 		{
 			
 			$message = "Halo apa kabar kk";
+			$message = "Bagaimana Sehat Hari ini?";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
