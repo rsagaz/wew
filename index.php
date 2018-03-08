@@ -124,42 +124,9 @@ $result = $bot->replyMessage($event['replyToken'], $templateMessage);
 return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 }
 	
-	{
-		my $buttons = LINE::Bot::API::Builder::TemplateMessage->new_buttons(
-    alt_text  => 'this is a buttons template',
-    image_url => 'https://example.com/bot/images/image.jpg',
-    title     => 'buttons',
-    text      => 'description',
-)->add_postback_action(
-    label => 'postback',
-    data  => 'postback data',
-    text  => 'postback message',
-)->add_message_action(
-    label => 'message',
-    text  => 'message',
-)->add_uri_action(
-    label => 'uri',
-    uri   => 'http://example.com/',
-)->add_message_action(
-    label => 'message2',
-    text  => 'message2',
-);
-
-my $messages = LINE::Bot::API::Builder::SendMessage->new(
-)->add_template($buttons->build);
-$bot->reply_message($reply_token, $messages->build);	
-	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 }	
 	
