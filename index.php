@@ -126,13 +126,14 @@ return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 
 	
 	{
-		if($userMessage == "Anime"){
+		if($userMessage == "Anime")
+	{
 $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Niko Chong", "Fashion Designer","https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",[
+  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Billy Tjong", "Fashion Designer","https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",[
   new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Lihat Yuk',"http://interstudifashion.com/"),
   ]),
 	
-  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Adji Notonegoro", "Fashion World","https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",[
+  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Ivan Gunawan", "Fashion World","https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",[
   new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Lihat Yuk',"http://interstudisekretaris.com/"),
   ]),
   
@@ -148,7 +149,7 @@ $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama
 $result = $bot->replyMessage($event['replyToken'], $templateMessage);
 return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 }
-	
+	}	
 	
 		
 	
