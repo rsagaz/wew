@@ -45,23 +45,16 @@ $app->post('/', function ($request, $response)
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)		
 	
-	{
-		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'Gila')
-			
-		{
-			
-		  $message = "Maaf Saya Tidak Mengerti";
-                  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-                  $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-                  return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-			
-		}
-	
-		
-		
-	}
-		
+{
+  $userMessage = $event['message']['text'];
+  if(strtolower($userMessage) == 'Gila')
+  {
+   $message = "Maaf Saya Tidak Mengerti";
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+   $result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+   return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+   }
+}		
 	
 	{
 		if($userMessage == "Tips Fashion"){
