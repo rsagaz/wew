@@ -51,7 +51,7 @@ $app->post('/', function ($request, $response)
 	{
 		if($userMessage == "Tips Fashion"){
 $carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
-  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Niko Chong", "Fashion Designer","https://i625.photobucket.com/albums/tt334/rsaga/Photo127.jpg",[
+  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Niko Chong", "Fashion Designer","https://i625.photobucket.com/albums/tt334/rsaga/Photo125.jpg",[
   new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Lihat Yuk',"http://interstudifashion.com/"),
   ]),
 	
